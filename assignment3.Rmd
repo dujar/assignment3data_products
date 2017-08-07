@@ -1,0 +1,35 @@
+---
+title: "assignment data-products"
+author: "Fabricio Dujardin"
+date: "8/7/2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE)
+```
+# Instructions
+
+* Does the web page feature a date and is this date less than two months before the date that you're grading this assignment?
+* Is the web page a presentation and does it feature an interactive plot that appears to have been created with Plotly?
+
+## Interactive plot
+Setting up the libraries and plot for the plot.
+```{r}
+library(RColorBrewer)
+library(plotly)
+library(quantmod)
+getSymbols("AAPL",src="yahoo")
+g <- autoplot.zoo(AAPL) 
+
+```
+
+## Financial Stock - AAPL time series
+
+Use Autoscale on the figure to inspect further the time series.
+
+```{r}
+ggplotly(g)
+```
+
+
